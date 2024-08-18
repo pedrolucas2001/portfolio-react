@@ -9,8 +9,11 @@ Projetos Interativos: Animações e efeitos dinâmicos que destacam minha expert
 🔧 **Tecnologias:**
 
 ReactJS
+
 Styled Components
+
 HTML5
+
 CSS3
 
 💡 Objetivo:
