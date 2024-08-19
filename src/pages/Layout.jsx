@@ -9,8 +9,9 @@ import styled from 'styled-components';
 const ContainerLayout = styled.div`
   width: 100vw; 
   height: auto;
-  font-family: 'Roboto', 'Open Sans';
+  font-family: "Trispace", sans-serif;
 `
+
 const ChildrenContainer = styled.div`
   width: 100%;
   height: 86vh;
@@ -23,7 +24,7 @@ const ChildrenContainer = styled.div`
 const Layout = ({ children }) => {
   return (
     <ContainerLayout>
-      <Header/>
+      <Header />
       <ChildrenContainer>{children}</ChildrenContainer>
       <Footer />
     </ContainerLayout>

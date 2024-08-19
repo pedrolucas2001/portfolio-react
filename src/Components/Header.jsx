@@ -8,6 +8,7 @@ const ContainerHeader = styled.header`
     justify-content: space-around;
     width: 100vw;
     height: 7vh;
+    font-size: 18px;
     background-color: #0B3D91;
     font-family: 'Orbitron', 'Bebas Neue';
 
@@ -57,7 +58,7 @@ const Header = () => {
             <span>Meu portfólio</span>
             <nav>
                 <NavLinks to="/">Home</NavLinks>
-                <NavLinks to="/">Sobre</NavLinks>
+                <NavLinks to="/about">Sobre</NavLinks>
                 <NavLinks to="/">Projetos</NavLinks>
                 <NavLinks to="/">Contatos</NavLinks>
             </nav>

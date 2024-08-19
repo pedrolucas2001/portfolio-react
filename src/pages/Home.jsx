@@ -1,15 +1,26 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { Link } from "react-router-dom";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const ContainerHome = styled.div`
-    font-family: "Trispace", sans-serif;
-    font-weight: bold;
     font-size: 28px;
     width: 100%;
     height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: ${fadeIn} 1s ease-out;
 `;
 
 const ContainerAbout = styled.div`
@@ -29,28 +40,9 @@ const ContainerAbout = styled.div`
 
         span {
             font-size: 40px;
-            color: #FFD700; /* Amarelo dourado */
+            color: #FFD700; 
         }
     }
-
-  button {
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    border: 0;
-    background: linear-gradient(145deg, #4b0082, #00bfff); /* Gradiente azul e roxo */
-    color: #ffffff;
-    font-family: "Trispace", sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.5s ease; /* Tempo de transição aumentado para suavizar o efeito */
-
-    &:hover {
-        background: linear-gradient(145deg, #00bfff, #4b0082); /* Gradiente invertido no hover */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra no hover */
-    }
-}
-
 `;
 
 const ContainerImg = styled.div`
@@ -62,19 +54,43 @@ const ContainerImg = styled.div`
 
     div {
         width: 65%;
-        height: 65%;
+        aspect-ratio: 1 / 1; /* Mantém a proporção 1:1 para garantir o círculo perfeito */
         background-image: url("/astronauta-laptop.png");
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 100%;
-        border-radius: 50%; /* Faz a div se tornar um círculo */
+        background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a área */
+        border-radius: 50%;
+        min-width: 150px; /* Define um tamanho mínimo para a div */
+        min-height: 150px; /* Define um tamanho mínimo para a div */
     }
 `;
+
 
 const ContainerButton = styled.div`
     width: 220px;
     height: 60px;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 0;
+    background:#40325E;
+    color: #ffffff;
+    font-family: "Trispace", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 1s;
+
+    &:hover {
+        background: linear-gradient(145deg, #004c66, #4b0082);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+`;
+
+const ButtonToAbout = styled(Link)`
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
 `;
 
 const Home = () => {
@@ -84,12 +100,12 @@ const Home = () => {
                 <div>
                     <p>Olá, sou </p>
                     <span>Pedro Lucas</span>
-                    <p>Dev Full Stack</p>
+                    <p>Dev Front End</p>
                 </div>
                 <ContainerButton>
-                    <button>
+                    <ButtonToAbout to="/about">
                         Saiba mais sobre mim                        
-                    </button>
+                    </ButtonToAbout>
                 </ContainerButton>
             </ContainerAbout>
             <ContainerImg>
