@@ -13,6 +13,21 @@ const fadeIn = keyframes`
   }
 `;
 
+// Animação de flutuação do astronauta
+const float = keyframes`
+  0% {
+    transform: translateY(0) rotate(3deg);
+  }
+  50% {
+    transform: translateY(-10px)
+    rotate(0deg);
+  }
+  100% {
+    transform: translateY(0)
+    rotate(3deg);
+  }
+`;
+
 const ContainerHome = styled.div`
     font-size: 28px;
     width: 100%;
@@ -51,20 +66,22 @@ const ContainerImg = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative; 
+    z-index: 1; /* Garante que a imagem fique sobre as estrelas e o satélite */
 
     div {
         width: 65%;
         aspect-ratio: 1 / 1; /* Mantém a proporção 1:1 para garantir o círculo perfeito */
-        background-image: url("/astronauta-laptop.png");
+        background-image: url("/img_fundo_astronatuta.png");
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a área */
+        background-size: cover;
         border-radius: 50%;
-        min-width: 150px; /* Define um tamanho mínimo para a div */
-        min-height: 150px; /* Define um tamanho mínimo para a div */
+        min-width: 150px; 
+        min-height: 150px;
+        animation: ${float} 10s ease-in-out infinite; /* Adiciona a animação de flutuação */
     }
 `;
-
 
 const ContainerButton = styled.div`
     width: 220px;
@@ -80,6 +97,8 @@ const ContainerButton = styled.div`
     font-weight: bold;
     cursor: pointer;
     transition: 1s;
+    position: relative; 
+    z-index: 1; /* Garante que a imagem fique sobre as estrelas e o satélite */
 
     &:hover {
         background: linear-gradient(145deg, #004c66, #4b0082);
@@ -91,6 +110,7 @@ const ButtonToAbout = styled(Link)`
     text-decoration: none;
     color: white;
     font-size: 16px;
+    
 `;
 
 const Home = () => {
@@ -104,7 +124,7 @@ const Home = () => {
                 </div>
                 <ContainerButton>
                     <ButtonToAbout to="/about">
-                        Saiba mais sobre mim                        
+                        Saiba mais                        
                     </ButtonToAbout>
                 </ContainerButton>
             </ContainerAbout>

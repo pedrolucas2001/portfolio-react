@@ -45,8 +45,10 @@ const ContainerHeader = styled.header`
 const NavLinks = styled(Link)`
     text-decoration: none;
     color: #FFD700;
+    transition: 0.5s;
     &:hover{
         color: #ffffff;
+        font-size: 20px;
         cursor: pointer;
     }
 
@@ -55,7 +57,7 @@ const NavLinks = styled(Link)`
 const Header = () => {
     return (
         <ContainerHeader>
-            <span>Meu portfólio</span>
+            <span></span>
             <nav>
                 <NavLinks to="/">Home</NavLinks>
                 <NavLinks to="/about">Sobre</NavLinks>
