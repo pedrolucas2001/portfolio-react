@@ -13,16 +13,23 @@ const float = keyframes`
 `;
 
 // Estilo para as estrelas
-const Star = styled.div`
+const Star = styled.div.attrs((props) => ({
+  style: {
+    width: props.$size || '2px',
+    height: props.$size || '2px',
+    opacity: props.$opacity || 0.8,
+    top: props.$top || '0',
+    left: props.$left || '0',
+    animationDuration: props.$duration || '2s',  // Define a duração da animação inline
+  },
+}))`
   position: absolute;
-  width: ${({ size }) => size || '2px'};
-  height: ${({ size }) => size || '2px'};
   background: white;
   border-radius: 50%;
-  opacity: ${({ opacity }) => opacity || 0.8};
-  animation: ${float} ${({ duration }) => duration || '2s'} infinite alternate ease-in-out;
-  top: ${({ top }) => top || '0'};
-  left: ${({ left }) => left || '0'};
+  animation-name: ${float};
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 `;
 
 const StarsContainer = styled.div`
@@ -41,11 +48,11 @@ const Stars = () => {
       {starsArray.map((_, index) => (
         <Star
           key={index}
-          size={`${Math.random() * 3 + 1}px`}
-          opacity={Math.random() * 0.7 + 0.3}
-          duration={`${Math.random() * 3 + 2}s`}
-          top={`${Math.random() * 100}vh`}
-          left={`${Math.random() * 100}vw`}
+          $size={`${Math.random() * 3 + 1}px`}
+          $opacity={Math.random() * 0.7 + 0.3}
+          $duration={`${Math.random() * 3 + 2}s`}
+          $top={`${Math.random() * 100}vh`}
+          $left={`${Math.random() * 100}vw`}
         />
       ))}
     </StarsContainer>

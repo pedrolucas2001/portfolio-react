@@ -52,7 +52,9 @@ const ContainerAbout = styled.div`
     display: flex;
     width: 100%;
     height: 70%;
-`
+    position: relative;
+    
+    `
 
 const Profile = styled.div`
     width: 40%;
@@ -167,12 +169,12 @@ const About = () => {
             <ContainerTechs>
                 <h3>Principais Tecnologias</h3>
                 <ul>
-                    <li><FaHtml5 /></li>
-                    <li><FaCss3Alt /></li>
-                    <li><FaJs /></li>
-                    <li><FaReact /></li>
-                    <li><FaNodeJs /></li>
-                    <li><SiMysql /></li>
+                    <li><FaHtml5 title='HTML'/></li>
+                    <li><FaCss3Alt title='CSS'/></li>
+                    <li><FaJs title='Javascript'/></li>
+                    <li><FaReact title='ReactJs'/></li>
+                    <li><FaNodeJs title='NodeJs'/></li>
+                    <li><SiMysql title='MySQL'/></li>
                 </ul>
             </ContainerTechs>
             <BackButton to="/"><FaHome /></BackButton>

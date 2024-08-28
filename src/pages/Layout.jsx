@@ -21,6 +21,12 @@ const ChildrenContainer = styled.div`
   align-items: center;
   justify-content: center;
   background-image: linear-gradient(180deg, #0B3D91 0%, #000000 100%);
+
+  > *{
+    position: relative; 
+    z-index: 1; 
+  }
+  
 `;
 
 const Layout = ({ children }) => {
