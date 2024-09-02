@@ -6,10 +6,10 @@ const ContainerHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100vw;
+    width: 100%;
     height: 7vh;
     font-size: 18px;
-    background-color: #0B3D91;
+    background-color: #01286c;
     font-family: 'Orbitron', 'Bebas Neue';
 
 
@@ -46,6 +46,7 @@ const NavLinks = styled(Link)`
     text-decoration: none;
     color: #FFD700;
     transition: 0.5s;
+    &.active,
     &:hover{
         color: #ffffff;
         font-size: 20px;
@@ -57,12 +58,12 @@ const NavLinks = styled(Link)`
 const Header = () => {
     return (
         <ContainerHeader>
-            <span></span>
+            <span>Pedro Lucas</span>
             <nav>
                 <NavLinks to="/">Home</NavLinks>
                 <NavLinks to="/about">Sobre</NavLinks>
                 <NavLinks to="/projects">Projetos</NavLinks>
-                <NavLinks to="/">Contatos</NavLinks>
+                <NavLinks to="/contacts">Contatos</NavLinks>
             </nav>
         </ContainerHeader>
 

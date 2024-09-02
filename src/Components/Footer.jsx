@@ -3,11 +3,11 @@ import React from 'react';
 import styled from "styled-components"
 
 const ContainerFooter = styled.footer`
-    width: 100vw;
+    width: 100%;
     height: 7vh;
     background-color: #000000;
     color: #C0C0C0;
-    padding: 20px;
+    /* padding: 20px; */
     font-family: 'Orbitron', 'Bebas Neue';
 
     p{

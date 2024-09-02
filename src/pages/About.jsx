@@ -39,9 +39,12 @@ const flipHover = keyframes`
 
 const FullContainer = styled.div`
     display: flex;
+    /* background-color: #00013545; */
+
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    height: 700px;
     animation: ${fadeIn} 1s ease-out;
     h3 {
         font-size: 24px;
@@ -104,6 +107,7 @@ const ContainerTechs = styled.div`
     height: 30%;
     display: flex;
     color: #ffffff;
+    gap: 2rem;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
@@ -128,57 +132,59 @@ const ContainerTechs = styled.div`
     }
 `
 
-const BackButton = styled(Link)`
-    position: fixed;
-    bottom: 60px;
-    right: 60px;
-    background-color: #40325E;
-    color: #ffffff;
-    font-family: "Trispace", sans-serif;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background 0.3s ease;
-    font-size: 1.5rem; /* Aumenta o tamanho dos ícones */
+// const BackButton = styled(Link)`
+//     position: fixed;
+//     bottom: 60px;
+//     right: 60px;
+//     background-color: #40325E;
+//     color: #ffffff;
+//     font-family: "Trispace", sans-serif;
+//     font-weight: bold;
+//     border: none;
+//     border-radius: 5px;
+//     padding: 10px 20px;
+//     text-decoration: none;
+//     font-size: 16px;
+//     transition: background 0.3s ease;
+//     font-size: 1.5rem; /* Aumenta o tamanho dos ícones */
 
 
-    &:hover {
-        background: linear-gradient(145deg, #004c66, #4b0082);
-    }
-`;
+//     &:hover {
+//         background: linear-gradient(145deg, #004c66, #4b0082);
+//     }
+// `;
 
 const About = () => {
     return (
-        <FullContainer>
-            <ContainerAbout>
-                <Profile>
-                    <div></div>
-                </Profile>
-                <Text>
-                    <h3>Sobre</h3> <br/>
-                    <p>Sou <span id='name'>Pedro Lucas</span></p>
-                    <p><span id='job'>Dev Front End</span></p> <br/>
-                    <p>Trabalho com desenvolvimento Web desde 2022.</p> <br/>
-                    <p>Sou apaixonado por transformar ideias em realidade digital.</p> <br />
-                    <p>Em constante aprendizado, dedicado a melhorar e manter aplicações web, com foco na experiência do usuário.</p>
-                </Text>
-            </ContainerAbout>
-            <ContainerTechs>
-                <h3>Principais Tecnologias</h3>
-                <ul>
-                    <li><FaHtml5 title='HTML'/></li>
-                    <li><FaCss3Alt title='CSS'/></li>
-                    <li><FaJs title='Javascript'/></li>
-                    <li><FaReact title='ReactJs'/></li>
-                    <li><FaNodeJs title='NodeJs'/></li>
-                    <li><SiMysql title='MySQL'/></li>
-                </ul>
-            </ContainerTechs>
-            <BackButton to="/"><FaHome /></BackButton>
-        </FullContainer>
+        <>
+            <FullContainer>
+                <ContainerAbout>
+                    <Profile>
+                        <div></div>
+                    </Profile>
+                    <Text>
+                        <h2>Sobre</h2> <br />
+                        <p>Sou <span id='name'>Pedro Lucas</span></p>
+                        <p><span id='job'>Dev Front End</span></p> <br />
+                        <p>Trabalho com desenvolvimento Web desde 2022.</p> <br />
+                        <p>Sou apaixonado por transformar ideias em realidade digital.</p> <br />
+                        <p>Em constante aprendizado, dedicado a melhorar e manter aplicações web, com foco na experiência do usuário.</p>
+                    </Text>
+                </ContainerAbout>
+                <ContainerTechs>
+                    <h3>Principais Tecnologias</h3>
+                    <ul>
+                        <li><FaHtml5 title='HTML' /></li>
+                        <li><FaCss3Alt title='CSS' /></li>
+                        <li><FaJs title='Javascript' /></li>
+                        <li><FaReact title='ReactJs' /></li>
+                        <li><FaNodeJs title='NodeJs' /></li>
+                        <li><SiMysql title='MySQL' /></li>
+                    </ul>
+                </ContainerTechs>
+            </FullContainer>
+            {/* <BackButton to="/"><FaHome /></BackButton> */}
+        </>
     );
 };
 

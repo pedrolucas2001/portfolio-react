@@ -1,6 +1,9 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
+import About from "./About";
+import Projects from './Projects';
+import Contacts from './Contacts';
 
 const fadeIn = keyframes`
   from {
@@ -26,10 +29,22 @@ const float = keyframes`
   }
 `;
 
-const ContainerHome = styled.div`
-  font-size: 28px;
+const FullPage = styled.main`
+  display: flex;
+  flex-direction: column; /* Empilha as seções verticalmente */
   width: 100%;
-  height: 90%;
+  /* gap: 5rem; */
+  overflow-x: hidden; /* Evita o scroll horizontal */
+
+`;
+
+const ContainerHome = styled.section`
+/* background-color: #f0f8ff12; */
+  font-size: 28px;
+  font-weight: 500;
+  width: 100%;
+  height: 700px;
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +53,6 @@ const ContainerHome = styled.div`
 
 const ContainerAbout = styled.div`
   width: 40%;
-  height: 100%;
   color: #ffffff;
   display: flex;
   gap: 3rem;
@@ -64,7 +78,6 @@ const ContainerAbout = styled.div`
 
 const ContainerImg = styled.div`
   width: 40%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,9 +102,10 @@ const ContainerButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 0;
-  background: #40325E;
+  background: linear-gradient(145deg, #004c66, #4b0082);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   color: #ffffff;
   font-family: "Trispace", sans-serif;
   font-weight: bold;
@@ -99,8 +113,8 @@ const ContainerButton = styled.div`
   transition: 1s;
 
   &:hover {
-    background: linear-gradient(145deg, #004c66, #4b0082);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background: #40325E;
+
   }
 `;
 
@@ -108,10 +122,11 @@ const ButtonToAbout = styled(Link)`
   text-decoration: none;
   color: white;
   font-size: 16px;
+  
 `;
 
 const ContainerET = styled.div`
- div{
+ div {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -125,25 +140,30 @@ const ContainerET = styled.div`
 
 const Home = () => {
   return (
-    <ContainerHome>
-      <ContainerAbout>
-        <div>
-          <ContainerET>
-            <div><p>Olá, visitante!</p> <img src="/alien3d.png" alt="ET" /></div> 
-          </ContainerET>
-          <p>
-            Sou <span>&lt;/Pedro&gt;</span>
-          </p>
-          <p>Desenvolvedor Front-End</p>
-        </div>
-        <ContainerButton>
-          <ButtonToAbout to="/about">Saiba mais</ButtonToAbout>
-        </ContainerButton>
-      </ContainerAbout>
-      <ContainerImg>
-        <div></div>
-      </ContainerImg>
-    </ContainerHome>
+    <FullPage>
+      <ContainerHome>
+        <ContainerAbout>
+          <div>
+            <ContainerET>
+              <div><p>Olá, visitante!</p> <img src="/alien3d.png" alt="ET" /></div>
+            </ContainerET>
+            <p>
+              Sou <span>&lt;Pedro/&gt;</span>
+            </p>
+            <p>Desenvolvedor Front-End</p>
+          </div>
+          <ContainerButton>
+            <ButtonToAbout to="/about">Saiba mais</ButtonToAbout>
+          </ContainerButton>
+        </ContainerAbout>
+        <ContainerImg>
+          <div></div>
+        </ContainerImg>
+      </ContainerHome>
+      {/* <Projects />
+      <About/>
+      <Contacts/> */}
+    </FullPage>
   );
 };
 
